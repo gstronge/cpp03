@@ -6,7 +6,7 @@
 /*   By: gstronge <gstronge@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 16:29:21 by gstronge          #+#    #+#             */
-/*   Updated: 2024/11/22 15:21:12 by gstronge         ###   ########.fr       */
+/*   Updated: 2024/11/22 16:17:25 by gstronge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,18 +29,18 @@ public:
 	ClapTrap(const ClapTrap& other_obj);
 	virtual ~ClapTrap();
 
-	ClapTrap&	operator=(const ClapTrap& other_obj);
-	void		attack(const std::string& target);
-	void		takeDamage(unsigned int amount);
-	void		beRepaired(unsigned int amount);
-	std::string	getName() const;
-	int			getHitPoints() const;
-	int			getEnergyPoints() const;
-	int			getAttackDamage() const;
-	void		setName(const std::string& set_name);
-	void		setHitPoints(int set_hit_points);
-	void		setEnergyPoints(int set_energy_points);
-	void		setAttackDamage(int set_attack_damage);
+	ClapTrap&		operator=(const ClapTrap& other_obj);
+	void virtual	attack(const std::string& target);
+	void			takeDamage(unsigned int amount);
+	void			beRepaired(unsigned int amount);
+	std::string		getName() const;
+	int				getHitPoints() const;
+	int				getEnergyPoints() const;
+	int				getAttackDamage() const;
+	void			setName(const std::string& set_name);
+	void			setHitPoints(int set_hit_points);
+	void			setEnergyPoints(int set_energy_points);
+	void			setAttackDamage(int set_attack_damage);
 };
 
 #endif

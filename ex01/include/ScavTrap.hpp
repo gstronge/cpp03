@@ -6,7 +6,7 @@
 /*   By: gstronge <gstronge@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 12:18:28 by gstronge          #+#    #+#             */
-/*   Updated: 2024/11/22 15:32:41 by gstronge         ###   ########.fr       */
+/*   Updated: 2024/11/22 15:52:02 by gstronge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ public:
 	~ScavTrap();
 
 	ScavTrap&	operator=(const ScavTrap& other_obj);
+	void		attack(const std::string& target) override;
 	void 		guardGate();
 };
 

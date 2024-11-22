@@ -6,7 +6,7 @@
 /*   By: gstronge <gstronge@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 17:14:51 by gstronge          #+#    #+#             */
-/*   Updated: 2024/11/22 15:38:26 by gstronge         ###   ########.fr       */
+/*   Updated: 2024/11/22 16:14:51 by gstronge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,16 @@ int	main(void)
 	std::cout << "\n" << "\033[35;1m--calling jane.guardGate();--\n\033[0m";
 	jane.guardGate();
 
+
+	std::cout << "\n" << "\033[36;1m--creating ClapTrap object anne--\n\033[0m";
+	ClapTrap	anne("anne");
+
+	std::cout << "\n" << "\033[36;1m--calling anne.attack(\"bob\");--\n\033[0m";
+	anne.attack("bob");
+	
+	std::cout << "\n" << "\033[36;1m--calling anne.beRepaired(10);--\n\033[0m";
+	anne.beRepaired(10);
+	
 	std::cout << "\n" << "\033[31;1m--MAIN FINISHED--\n\033[0m";
 	return (0);
 }
