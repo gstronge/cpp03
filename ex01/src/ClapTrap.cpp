@@ -6,7 +6,7 @@
 /*   By: gstronge <gstronge@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 16:28:23 by gstronge          #+#    #+#             */
-/*   Updated: 2024/11/11 21:07:51 by gstronge         ###   ########.fr       */
+/*   Updated: 2024/11/22 14:59:16 by gstronge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,15 @@ ClapTrap::ClapTrap() : _name("No name"), _hit_points(10), _energy_points(10), _a
 	std::cout << "ClapTrap Default constructor called\n";
 }
 
-ClapTrap::ClapTrap(const std::string& name) : _name(name), _hit_points(10), _energy_points(10), _attack_damage(0)
+ClapTrap::ClapTrap(const std::string& name) : _name(name), _hit_points(10), 
+	_energy_points(10), _attack_damage(0)
 {
 	std::cout << _name << "'s ClapTrap Overloaded constructor called\n";
 }
 
-ClapTrap::ClapTrap(const ClapTrap& other_obj) : _name(other_obj._name), _hit_points(other_obj._hit_points), _energy_points(other_obj._energy_points), _attack_damage(other_obj._attack_damage)
+ClapTrap::ClapTrap(const ClapTrap& other_obj) : _name(other_obj._name), 
+	_hit_points(other_obj._hit_points), _energy_points(other_obj._energy_points), 
+	_attack_damage(other_obj._attack_damage)
 {
 	std::cout << this->_name << "'s ClapTrap Copy constructor called\n";
 }
@@ -62,7 +65,6 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	{
 		std::cout << "ClapTrap " << _name << " took " << amount << " points of hit damage!\n";
 		_hit_points-=amount;
-		_energy_points--;
 	}
 	else
 		std::cout << _name << " doesn't have enough energy or enough hit points to take more damage\n";

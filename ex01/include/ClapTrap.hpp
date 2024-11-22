@@ -6,14 +6,13 @@
 /*   By: gstronge <gstronge@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 16:29:21 by gstronge          #+#    #+#             */
-/*   Updated: 2024/11/11 20:50:27 by gstronge         ###   ########.fr       */
+/*   Updated: 2024/11/22 15:21:42 by gstronge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # ifndef	CLAPTRAP_H
 # define	CLAPTRAP_H
 
-#include <string>
 #include <iostream>
 
 class ClapTrap
@@ -28,7 +27,7 @@ public:
 	ClapTrap();
 	ClapTrap(const std::string& name);
 	ClapTrap(const ClapTrap& other_obj);
-	~ClapTrap();
+	virtual ~ClapTrap();
 
 	ClapTrap&	operator=(const ClapTrap& other_obj);
 	void		attack(const std::string& target);
