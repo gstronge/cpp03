@@ -6,7 +6,7 @@
 /*   By: gstronge <gstronge@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 12:17:57 by gstronge          #+#    #+#             */
-/*   Updated: 2024/11/22 16:19:24 by gstronge         ###   ########.fr       */
+/*   Updated: 2024/11/22 17:15:30 by gstronge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,57 +15,57 @@
 ScavTrap::ScavTrap() : ClapTrap()
 {
 	std::cout << "ScavTrap Default constructor called\n";
-	setHitPoints(100);
-	setEnergyPoints(50);
-	setAttackDamage(20);
+	_hit_points = 100;
+	_energy_points = 50;
+	_attack_damage = 10;
 }
 
 ScavTrap::ScavTrap(const std::string name) : ClapTrap(name)
 {
 	std::cout << name << "'s ScavTrap Overloaded constructor called\n";
-	setHitPoints(100);
-	setEnergyPoints(50);
-	setAttackDamage(20);
+	_hit_points = 100;
+	_energy_points = 50;
+	_attack_damage = 10;
 }
 
 ScavTrap::ScavTrap(const ScavTrap& other_obj) : ClapTrap(other_obj)
 {
-	std::cout << other_obj.getName() << "'s ScavTrap Copy constructor called\n";
+	std::cout << other_obj._name << "'s ScavTrap Copy constructor called\n";
 }
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << this->getName() << "'s ScavTrap Destructor called\n";
+	std::cout << this->_name << "'s ScavTrap Destructor called\n";
 }
 
 ScavTrap&	ScavTrap::operator=(const ScavTrap& other_obj)
 {
-	std::cout << this->getName() << "'s ScavTrap Copy assignment operator called\n";
+	std::cout << this->_name << "'s ScavTrap Copy assignment operator called\n";
 	if (this != &other_obj)
 	{	
-		this->setName(other_obj.getName());
-		this->setHitPoints(other_obj.getHitPoints());
-		this->setEnergyPoints(other_obj.getEnergyPoints());
-		this->setAttackDamage(other_obj.getAttackDamage());
+		this->_name = other_obj._name;
+		this->_hit_points = other_obj._hit_points;
+		this->_energy_points = other_obj._energy_points;
+		this->_attack_damage = other_obj._attack_damage;
 	}
 	return (*this);
 }
 
 void	ScavTrap::attack(const std::string& target)
 {
-	if (getEnergyPoints() > 0 && getHitPoints() > 0)
+	if (_energy_points > 0 && _hit_points > 0)
 	{
-		std::cout << "ScavTrap " << getName() << " attacks " << target << ", causing " << getAttackDamage() << " points of damage!\n";
-		setEnergyPoints(getEnergyPoints() - 1);
+		std::cout << "ScavTrap " << _name << " attacks " << target << ", causing " << _attack_damage << " points of damage!\n";
+		_energy_points--;
 	}
 	else
-		std::cout << getName() << " doesn't have enough energy or enough hit points to attack " << target << "\n";
+		std::cout << _name << " doesn't have enough energy or enough hit points to attack " << target << "\n";
 }
 
 void	ScavTrap::guardGate()
 {
-	if (getEnergyPoints() > 0 && getHitPoints() > 0)
-		std::cout << getName() << " is now in Gate keeper mode!\n";
+	if (_energy_points > 0 && _hit_points > 0)
+		std::cout << _name << " is now in gate keeper mode!\n";
 	else
-		std::cout << getName() << " doesn't have enough energy or enough hit points to be in gate keeper mode\n";
+		std::cout << _name << " doesn't have enough energy or enough hit points to be in gate keeper mode\n";
 }

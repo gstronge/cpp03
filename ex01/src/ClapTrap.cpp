@@ -6,7 +6,7 @@
 /*   By: gstronge <gstronge@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 16:28:23 by gstronge          #+#    #+#             */
-/*   Updated: 2024/11/22 15:52:30 by gstronge         ###   ########.fr       */
+/*   Updated: 2024/11/22 17:07:21 by gstronge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,44 +80,4 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	}
 	else
 		std::cout << _name << " doesn't have enough energy or enough hit points to be repaired\n";
-}
-
-std::string	ClapTrap::getName() const
-{
-	return (_name);
-}
-
-int	ClapTrap::getHitPoints() const
-{
-	return (_hit_points);
-}
-
-int	ClapTrap::getEnergyPoints() const
-{
-	return (_energy_points);
-}
-
-int	ClapTrap::getAttackDamage() const
-{
-	return (_attack_damage);	
-}
-
-void	ClapTrap::setName(const std::string& set_name)
-{
-	_name = set_name;
-}
-
-void	ClapTrap::setHitPoints(int set_hit_points)
-{
-	_hit_points = set_hit_points;
-}
-
-void	ClapTrap::setEnergyPoints(int set_energy_points)
-{
-	_energy_points = set_energy_points;
-}
-
-void	ClapTrap::setAttackDamage(int set_attack_damage)
-{
-	_attack_damage = set_attack_damage;	
 }

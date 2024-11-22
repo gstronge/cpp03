@@ -6,7 +6,7 @@
 /*   By: gstronge <gstronge@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 16:29:21 by gstronge          #+#    #+#             */
-/*   Updated: 2024/11/22 15:54:18 by gstronge         ###   ########.fr       */
+/*   Updated: 2024/11/22 17:07:26 by gstronge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class ClapTrap
 {
-private:
+protected:
 	std::string	_name;
 	int			_hit_points;
 	int			_energy_points;
@@ -33,14 +33,6 @@ public:
 	void virtual	attack(const std::string& target);
 	void			takeDamage(unsigned int amount);
 	void			beRepaired(unsigned int amount);
-	std::string		getName() const;
-	int				getHitPoints() const;
-	int				getEnergyPoints() const;
-	int				getAttackDamage() const;
-	void			setName(const std::string& set_name);
-	void			setHitPoints(int set_hit_points);
-	void			setEnergyPoints(int set_energy_points);
-	void			setAttackDamage(int set_attack_damage);
 };
 
 #endif
